@@ -31,7 +31,7 @@ public class FindLongestCompoundWord {
 		}
 	}
 
-	public static void find(File file)  throws FileNotFoundException{
+	public static void find(File file) throws FileNotFoundException{
 
 		//measuring time of calculate
 		long start = System.currentTimeMillis();
