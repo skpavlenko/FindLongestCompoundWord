@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 // this program find the longest words in a file
 // than calculate total amount of compound words
-
 public class FindLongestCompoundWord {
 	static HashMap<String, Integer> hmap;
 	static Trie trie;
@@ -44,7 +43,7 @@ public class FindLongestCompoundWord {
 		Scanner s = new Scanner(file);
 
 		String word;				// a word
-		hmap = new HashMap<String, Integer>();
+		hmap = new HashMap<String, Integer>(); //initial
 		trie = new Trie();
 		concat_words = new HashSet<>();
 
@@ -57,6 +56,7 @@ public class FindLongestCompoundWord {
 			trie.put(word, word);
 		}
 
+		//sort the hash by word length
 		hmap = hmap.entrySet().stream()
 				.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
@@ -65,6 +65,7 @@ public class FindLongestCompoundWord {
 		String longest = "";		// longest compound word
 		String sec_longest = "";	// second longest compound word
 
+		//process all words from bigger to smaller
 		for(Map.Entry m:hmap.entrySet()){
 			original_word = m.getKey().toString();
 			word = m.getKey().toString();
@@ -78,7 +79,7 @@ public class FindLongestCompoundWord {
 			}
 		}
 
-		//print time for calculate
+		//print spent time  for calculate
 		System.out.println("Time for calculate - " + (System.currentTimeMillis()-start) + " ms");
 
 		// print out the results
