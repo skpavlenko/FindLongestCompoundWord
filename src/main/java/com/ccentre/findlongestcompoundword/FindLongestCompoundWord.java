@@ -31,14 +31,10 @@ public class FindLongestCompoundWord {
 		}
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void find(File file)  throws FileNotFoundException{
 
 		//measuring time of calculate
 		long start = System.currentTimeMillis();
-
-		// file with compound words
-		//File file = new File("src/test.txt");
-		File file = new File("src/words.txt");
 
 		Scanner s = new Scanner(file);
 
