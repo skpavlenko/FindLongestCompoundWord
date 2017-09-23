@@ -9,14 +9,14 @@ import java.util.stream.Collectors;
 // this program find the longest words in a file
 // than calculate total amount of compound words
 public class FindLongestCompoundWord {
-	static HashMap<String, Integer> hmap;
-	static Trie trie;
-	static String original_word;
-	static HashSet<String> concat_words;
+	private static HashMap<String, Integer> hmap;
+	private static Trie trie;
+	private static String original_word;
+	private static HashSet<String> concat_words;
 
 	// decomposition word to prefix and suffix
 	// with recursion
-	static void find_prefix(String word) {
+	private static void find_prefix(String word) {
 		for (int i=0; i<word.length(); i++){
 			String pref = word.substring(0, i+1);
 			String suffix = word.substring(i+1);
